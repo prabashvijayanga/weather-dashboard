@@ -13,8 +13,7 @@ const theme = extendTheme({
   styles: {
     global: {
       body: {
-        bg: 'linear-gradient(to bottom right, #1e293b, #0f172a)',
-        minHeight: '100vh',
+        bg: '#0f172a',
       },
     },
   },
