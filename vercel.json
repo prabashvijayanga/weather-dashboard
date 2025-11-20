@@ -1,15 +1,10 @@
 {
   "version": 2,
+  "installCommand": "npm install --legacy-peer-deps",
   "builds": [
     {
-      "src": "api/**/*.js",
+      "src": "api/weather.js",
       "use": "@vercel/node"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/api/(.*)",
-      "dest": "/api/$1"
     }
   ]
 }
