@@ -7,7 +7,7 @@ const About = () => {
     {
       icon: <Cloud size={40} />,
       title: 'Real-time Data',
-      description: 'Get accurate weather information updated in real-time from OpenWeatherMap API',
+      description: 'Get accurate weather information updated in real time from OpenWeatherMap API',
     },
     {
       icon: <Globe size={40} />,
