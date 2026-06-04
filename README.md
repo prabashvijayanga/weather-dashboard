@@ -27,7 +27,7 @@ npm install
 
 
 3. Set up environment variables
-# Copy the example env file
+Copy the example env file
 cp .env.example .env
 
 Edit .env and add your OpenWeatherMap API key. You can get your free API key from OpenWeatherMap.
