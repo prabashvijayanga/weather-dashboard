@@ -126,18 +126,18 @@ const Home = () => {
   }
 
   return (
-    <div className="container mx-auto px-4 py-6 sm:py-8">
+    <div className="container mx-auto px-4 py-6 sm:py-12">
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        className="text-center mb-8 sm:mb-12"
+        transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+        className="text-center mb-12 sm:mb-16"
       >
-        <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent mb-4">
+        <h1 className="text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-white to-white/40 mb-6">
           Weather Dashboard
         </h1>
-        <p className="text-gray-400 text-base sm:text-lg px-4">
-          Get real-time weather updates for any city in the world
+        <p className="text-zinc-400 text-lg sm:text-xl px-4 max-w-2xl mx-auto font-medium tracking-wide">
+          Get real-time meteorological data for any city in the world, beautifully presented.
         </p>
       </motion.div>
 
@@ -147,9 +147,10 @@ const Home = () => {
 
       {!loading && weather && (
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5 }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="space-y-8"
         >
           <WeatherCard weather={weather} onAddFavorite={handleAddFavorite} />
           {forecast && <ForecastCard forecast={forecast} />}
@@ -160,9 +161,9 @@ const Home = () => {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          className="text-center text-gray-400 mt-20"
+          className="text-center text-zinc-500 mt-24"
         >
-          <p className="text-lg sm:text-xl">Search for a city to get started</p>
+          <p className="text-lg sm:text-xl font-medium tracking-wide">Search for a location to begin</p>
         </motion.div>
       )}
     </div>

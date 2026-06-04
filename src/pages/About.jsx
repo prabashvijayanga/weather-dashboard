@@ -1,82 +1,78 @@
 import { motion } from 'framer-motion'
-import { Card, CardBody } from '@chakra-ui/react'
 import { Cloud, Heart, Zap, Globe } from 'lucide-react'
 
 const About = () => {
   const features = [
     {
-      icon: <Cloud size={40} />,
+      icon: <Cloud size={32} strokeWidth={1.5} />,
       title: 'Real-time Data',
-      description: 'Get accurate weather information updated in real-time from OpenWeatherMap API',
+      description: 'Accurate telemetry updated instantly from the OpenWeatherMap network.',
     },
     {
-      icon: <Globe size={40} />,
+      icon: <Globe size={32} strokeWidth={1.5} />,
       title: 'Global Coverage',
-      description: 'Access weather data for cities all around the world with detailed forecasts',
+      description: 'Access precise atmospheric conditions for any coordinates on Earth.',
     },
     {
-      icon: <Heart size={40} />,
-      title: 'Save Favorites',
-      description: 'Keep track of weather in your favorite locations with local storage',
+      icon: <Heart size={32} strokeWidth={1.5} />,
+      title: 'Quick Access',
+      description: 'Pin your critical locations for immediate tracking and monitoring.',
     },
     {
-      icon: <Zap size={40} />,
-      title: 'Lightning Fast',
-      description: 'Built with modern technologies like React, Vite, and Tailwind CSS v4',
+      icon: <Zap size={32} strokeWidth={1.5} />,
+      title: 'Optimized Engine',
+      description: 'Built on a high-performance stack utilizing React and Vite.',
     },
   ]
 
   const technologies = [
     'React 18',
-    'Vite',
-    'Tailwind CSS v4',
-    'Chakra UI',
+    'Vite Engine',
+    'Tailwind CSS',
     'Framer Motion',
     'React Router',
     'Axios',
     'Lucide Icons',
+    'Glassmorphism UI'
   ]
 
   return (
-    <div className="container mx-auto px-4 py-6 sm:py-8">
+    <div className="container mx-auto px-4 py-8 sm:py-12 max-w-5xl">
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        className="text-center mb-8 sm:mb-12"
+        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+        className="text-center mb-16"
       >
-        <h1 className="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent mb-4">
-          About WeatherPro
+        <h1 className="text-5xl sm:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-b from-white to-white/50 tracking-tighter mb-6">
+          System Architecture
         </h1>
-        <p className="text-gray-400 text-base sm:text-lg max-w-2xl mx-auto px-4">
-          A modern, beautiful weather dashboard built with the latest web technologies
-          for an exceptional user experience
+        <p className="text-zinc-400 text-lg sm:text-xl max-w-2xl mx-auto font-medium tracking-wide leading-relaxed">
+          A premium, high-performance weather dashboard engineered with modern web technologies and fluent animations.
         </p>
       </motion.div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mb-8 sm:mb-12">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 mb-16">
         {features.map((feature, index) => (
           <motion.div
             key={index}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
-            whileHover={{ scale: 1.05 }}
+            className="group relative overflow-hidden rounded-3xl bg-zinc-900/30 backdrop-blur-xl border border-white/10 p-8 hover:bg-zinc-900/50 transition-colors duration-500"
           >
-            <Card
-              bg="slate.800"
-              border="2px solid"
-              borderColor="slate.700"
-              className="backdrop-blur-md h-full"
-            >
-              <CardBody className="p-4 sm:p-6">
-                <div className="text-cyan-400 mb-4">{feature.icon}</div>
-                <h3 className="text-lg sm:text-xl font-bold text-white mb-2">
-                  {feature.title}
-                </h3>
-                <p className="text-gray-400 text-sm sm:text-base">{feature.description}</p>
-              </CardBody>
-            </Card>
+            <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <div className="relative z-10">
+              <div className="inline-flex p-3 rounded-2xl bg-white/5 border border-white/10 text-zinc-300 mb-6 group-hover:scale-110 group-hover:text-white transition-all duration-500">
+                {feature.icon}
+              </div>
+              <h3 className="text-xl font-bold text-white mb-3 tracking-tight">
+                {feature.title}
+              </h3>
+              <p className="text-zinc-400 leading-relaxed font-medium">
+                {feature.description}
+              </p>
+            </div>
           </motion.div>
         ))}
       </div>
@@ -84,44 +80,38 @@ const About = () => {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 0.5, delay: 0.4 }}
+        transition={{ duration: 0.6, delay: 0.4 }}
+        className="relative overflow-hidden rounded-3xl bg-zinc-900/40 backdrop-blur-2xl border border-white/10 shadow-2xl p-8 sm:p-12"
       >
-        <Card
-          bg="slate.800"
-          border="2px solid"
-          borderColor="slate.700"
-          className="backdrop-blur-md"
-        >
-          <CardBody className="p-6 sm:p-8">
-            <h2 className="text-xl sm:text-2xl font-bold text-white mb-4">
-              Technologies Used
-            </h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 sm:gap-4">
-              {technologies.map((tech) => (
-                <motion.div
-                  key={tech}
-                  whileHover={{ scale: 1.05 }}
-                  className="bg-slate-700/50 rounded-lg p-3 text-center"
-                >
-                  <p className="text-white font-semibold text-sm sm:text-base">{tech}</p>
-                </motion.div>
-              ))}
-            </div>
-          </CardBody>
-        </Card>
+        <div className="relative z-10">
+          <h2 className="text-2xl font-bold text-white mb-8 text-center tracking-tight">
+            Technology Stack
+          </h2>
+          <div className="flex flex-wrap justify-center gap-3 sm:gap-4">
+            {technologies.map((tech) => (
+              <motion.div
+                key={tech}
+                whileHover={{ scale: 1.05, y: -2 }}
+                className="px-5 py-2.5 rounded-full bg-white/5 border border-white/10 text-zinc-300 text-sm font-semibold tracking-wide hover:bg-white/10 hover:border-white/20 hover:text-white transition-all shadow-sm"
+              >
+                {tech}
+              </motion.div>
+            ))}
+          </div>
+        </div>
       </motion.div>
 
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 0.5, delay: 0.6 }}
-        className="text-center mt-8 sm:mt-12"
+        transition={{ duration: 0.6, delay: 0.6 }}
+        className="text-center mt-16 space-y-2"
       >
-        <p className="text-gray-400 text-sm sm:text-base">
+        <p className="text-zinc-500 text-sm font-medium tracking-wide">
           Created with ❤️ by PrabashVijayanga | {new Date().getFullYear()}
         </p>
-        <p className="text-gray-500 text-xs sm:text-sm mt-2">
-          Powered by OpenWeatherMap API
+        <p className="text-zinc-600 text-xs font-semibold uppercase tracking-widest">
+          Powered by OpenWeatherMap
         </p>
       </motion.div>
     </div>
