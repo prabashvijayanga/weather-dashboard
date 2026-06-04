@@ -7,7 +7,7 @@ import About from './pages/About'
 function App() {
   return (
     <div className="min-h-screen bg-brand-dark bg-mesh relative overflow-hidden">
-      {/* Optional: Add a subtle noise overlay here if you want maximum texture */}
+
       <div className="relative z-10 flex flex-col min-h-screen">
         <Navbar />
         <main className="flex-grow w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
